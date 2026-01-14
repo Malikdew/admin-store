@@ -56,7 +56,7 @@ node app.js
 http://localhost:3000
 
 ```bash
-git clone https://github.com/USERNAME_KAMU/admin-store.git
+git clone https://github.com/Malikdew/admin-store.git
 cd admin-store
 
 
