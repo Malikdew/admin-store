@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Store</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>Admin Store</h1>
+    <div>
+      <a href="/">Produk</a>
+      <a href="/purchases">Pembelian</a>
+    </div>
+  </div>
+
+<div class="container">
+  <h2>Pembelian</h2>
+
+  <div class="form-box">
+    <form method="POST" action="/purchase">
+      <input type="hidden" name="product_id" value="<%= product.id %>">
+
+      <label>Jumlah</label>
+      <input type="number" name="quantity" min="1" required>
+
+      <button class="btn btn-primary">Simpan Pembelian</button>
+    </form>
+  </div>
+</div>

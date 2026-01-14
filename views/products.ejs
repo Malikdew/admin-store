@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Store</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>Admin Store</h1>
+    <div>
+      <a href="/">Produk</a>
+      <a href="/purchases">Pembelian</a>
+    </div>
+  </div>
+  
+<div class="container">
+  <h2>Daftar Produk</h2>
+
+  <div class="grid">
+    <% products.forEach(p => { %>
+      <div class="card">
+        <h3><%= p.name %></h3>
+        <div class="price">Rp <%= p.price.toLocaleString() %></div>
+        <div class="stock">Stok: <%= p.stock %></div>
+        <a class="btn btn-primary" href="/purchase/<%= p.id %>">Beli</a>
+      </div>
+    <% }) %>
+  </div>
+</div>

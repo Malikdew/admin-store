@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Store</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>Admin Store</h1>
+    <div>
+      <a href="/">Produk</a>
+      <a href="/purchases">Pembelian</a>
+    </div>
+  </div>
+
+<div class="container">
+  <h2>Riwayat Pembelian</h2>
+
+  <ul class="list">
+    <% purchases.forEach(p => { %>
+      <li>
+        <div>
+          <strong><%= p.name %></strong><br>
+          Qty: <%= p.quantity %> |
+          <span class="status <%= p.status === 'ACTIVE' ? 'active' : 'canceled' %>">
+            <%= p.status %>
+          </span>
+        </div>
+
+        <% if (p.status === 'ACTIVE') { %>
+          <a class="btn btn-danger" href="/cancel/<%= p.id %>">Cancel</a>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</div>
